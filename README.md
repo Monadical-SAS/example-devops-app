@@ -3,7 +3,7 @@
 This is the example application to be used by interviewees applying for a Dev-Ops engineer position at Monadical.
 
 As outlined here:  
-https://docs.sweeting.me/s/monadical-study-guide#Dev-Ops-Project
+https://docs.zalad.io/s/monadical-study-guide#Dev-Ops-Project
 
 ## Quickstart
 
