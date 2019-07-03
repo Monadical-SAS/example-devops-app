@@ -1,0 +1,22 @@
+# put your full docker-compose config here (if used)
+
+version: '3.7'
+services:
+    postgresql:
+        image:  postgres:11
+        restart: always
+        volumes:
+            - ./data/database:/var/lib/postgresql/data
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "10m"
+                max-file: "3"
+        
+    nginx:
+        ...
+
+    django:
+        ...
+
+ 

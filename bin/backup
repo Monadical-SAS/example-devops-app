@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+# dump the postgresql database to a file, e.g. data/backups/banana_$(date +%s).sql

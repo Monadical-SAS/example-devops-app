@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Code to deploy the latest version of the app goes here...
+#
+# 1. backup the database
+# 2. pull latest code from github
+# 3. restart any services needed
