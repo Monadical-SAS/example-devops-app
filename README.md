@@ -17,7 +17,8 @@ https://docs.sweeting.me/s/monadical-study-guide#Dev-Ops-Project
   - Put all management scripts in `bin/` (e.g. `start`, `stop`, `deploy`, `backup`)
   - Put all application code in `code/` (e.g. django app code, python virtualenv)
 
-Make sure to commit all config, scripts, and code created during the setup process to your fork of this repo.
+Empty stub files are provided in the recommended directory structure to help speed up the process.  
+Make sure to edit them with your code and commit all config, scripts, and code created during the setup process to your fork of this repo.
 
 Follow the structure oulined in this post:
 https://docs.zalad.io/s/an-intro-to-the-opt-directory
