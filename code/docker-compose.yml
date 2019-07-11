@@ -18,6 +18,14 @@ services:
       - 8000:8000
     depends_on:
       - db
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - web
 
 #volumes:
 #  postgres_data:
