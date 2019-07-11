@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=test123
+      - POSTGRES_DB=postgres
+  web:
+    build: .
+    command: python /code/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+#volumes:
+#  postgres_data:

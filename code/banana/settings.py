@@ -25,7 +25,7 @@ SECRET_KEY = 'xot1h7(7u(-3lf^4^aj@a)mn25ll7zlaha_4d(72!%nu@r1nrh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['138.68.58.184', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['162.243.170.51', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'banana.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'test123',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
