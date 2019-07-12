@@ -5,3 +5,16 @@
 # 1. backup the database
 # 2. pull latest code from github
 # 3. restart any services needed
+
+#Backup
+source /opt/banana/bin/backup
+#Pull latest code from github
+
+#Create a new migrations
+docker-compose run web python /code/manage.py makemigrations
+#Apply the migration changes higher than db
+docker-compose run web python /code/manage.py migrate
+#Rebuild Services
+docker-compose up -d --build
+#Restart services
+docker-compose restart
