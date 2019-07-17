@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xot1h7(7u(-3lf^4^aj@a)mn25ll7zlaha_4d(72!%nu@r1nrh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['162.243.170.51', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['165.227.85.195', '127.0.0.1', 'localhost','test.xvirtual.site', 'monadicalsite']
 
 
 # Application definition
@@ -77,8 +77,8 @@ WSGI_APPLICATION = 'banana.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
+        'NAME': 'pgdb',
+        'USER': 'postgresql',
         'PASSWORD': 'test123',
         'HOST': 'db',
         'PORT': 5432,
@@ -123,4 +123,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT= '/static'
+STATIC_ROOT = '/static'
+

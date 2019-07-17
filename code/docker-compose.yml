@@ -2,32 +2,43 @@ version: '3'
 
 services:
   db:
-    image: postgres:latest
-#    volumes:
-#      - postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=test123
-      - POSTGRES_DB=postgres
+    image: libanaabdul/lipostgresql:v1
+    container_name: Postgresql1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"
   web:
-    build: .
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    image: libanaabdul/lipython:v1
+    container_name: Web1
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:80"
     volumes:
       - .:/code
       - /static:/static
-    ports:
-      - 8000:8000
     depends_on:
       - db
   nginx:
-    image: nginx:latest
+    image: nginx:stable
+    container_name: Nginx1
     ports:
-      - 80:80
+      - "80:80"
+      - "443:443"
     volumes:
-      - ./config/nginx/conf.d:/etc/nginx/conf.d
       - /static:/static
+      - ./config/nginx:/etc/nginx/
+      - /etc/ssl/:/etc/ssl/
+      - /opt/banana/data/logs/nginx:/var/log/nginx
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"
     depends_on:
       - web
-
-#volumes:
-#  postgres_data:
+volumes:
+ postgres_data:
