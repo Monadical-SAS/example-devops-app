@@ -1,4 +1,4 @@
-# Dev-Ops Take-Home Project
+## Dev-Ops Take-Home Project
 
 1. Fork this repo, and clone your version into `/opt/banana` on the VPS  
   `git clone https://github.com/<yourusername>/example-devops-app /opt/banana`
