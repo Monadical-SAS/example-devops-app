@@ -5,3 +5,11 @@
 # 1. backup the database
 # 2. pull latest code from github
 # 3. restart any services needed
+
+source /opt/banana/bin/backup
+#Backup
+./bin/backup && echo "Backup Completed"
+#Pull latest code from github
+git pull  && "Pull Completed"
+#Restart
+./bin/stop && ./bin/start "Services Restared"

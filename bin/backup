@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
 # dump the postgresql database to a file, e.g. data/backups/banana_$(date +%s).sql
+
+docker exec Postgresql1 pg_dump -U postgres > /opt/banana/data/backup/banana_$(date +%s).sql

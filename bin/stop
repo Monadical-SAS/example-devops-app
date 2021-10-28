@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
 # stop all services here...
+
+Directory="/opt/banana/code"
+
+if [ -e $Directory ]
+then
+ cd $Directory && docker-compose stop && echo "Se detuvieron todos los servicios"
+fi

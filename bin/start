@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
 
 # start all services needed to run the app here...
+
+Directory="/opt/banana/code"
+
+if [ -e $Directory ] 
+then
+ cd $Directory && docker-compose up -d && echo "Se ejecutaron todos los servicios"
+else
+ echo "No se ejecutaron los servicios, revise su docker-compose.yml"
+fi
